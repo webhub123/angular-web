@@ -1,4 +1,6 @@
+import { UserService } from './../../service/user.service';
 import { Component, OnInit } from '@angular/core';
+import { MiddlewareGuard } from 'src/app/middleware.guard';
 
 @Component({
   selector: 'app-header',
@@ -7,7 +9,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor() { }
+  constructor(private user : UserService, private auth : MiddlewareGuard) { }
 
   ngOnInit() {
   }

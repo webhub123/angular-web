@@ -1,0 +1,38 @@
+<div class="container" >
+  <div class="row ">
+      <h3 class="col-sm-2">List </h3>
+  </div>
+  <hr/>
+  <div class="row ">
+      <div class="col-sm-12">
+          <a routerLink="/create" class="btn btn-primary btn-sm pull-right" >Add Profile</a>
+      </div>
+  </div>
+  <br/>
+  <table class="table table-bordered">
+      <thead>
+          <tr>
+            <th>NAME</th>
+            <th>AGE</th>
+            <th>ADDRESS</th> 
+            <th class="text-center">ACTION</th>
+          </tr>   
+      </thead>
+      <tbody> 
+          <tr *ngFor="let x of list">
+            <td>{{ x.name }}</td>
+            <td>{{ x.age }}</td>
+            <td>{{ x.address }}</td>
+            <td class="text-center">
+                <div class="btn-group">
+                    <a [routerLink]="['/edit', x.id]" class="btn btn-primary btn-sm" >Edit</a>
+                    <button class="btn btn-danger btn-sm" (click)="removeProf(x.id)" >Remove</button>
+
+                </div>
+            </td>
+          </tr>
+      </tbody>
+  </table>
+  <br/>    
+</div>
+
